@@ -21,6 +21,8 @@ class Record:
         self.domains = config['DOMAINS']
         self.ttl = config['TTL']
         self.zoneid = config['ZONEID']
+        # Fix for #1 
+        self.address = ''
         if 'ADDRESS' in config.keys():
             self.address = config['ADDRESS']
 
