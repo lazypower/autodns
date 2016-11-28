@@ -1,9 +1,10 @@
 import argparse
-from helpers import has_aws_credentials
 import logging
 from path import Path
-from record import Record
 from sys import exit
+
+from .helpers import has_aws_credentials
+from .record import Record
 
 
 def setup_logging(debug=None, log=None):

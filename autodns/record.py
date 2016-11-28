@@ -1,10 +1,11 @@
 from boto import route53
-from helpers import aws_keys
-from helpers import get_host_ip
-from helpers import has_aws_credentials
-from helpers import read_config
-from helpers import write_config
 import logging
+
+from .helpers import aws_keys
+from .helpers import get_host_ip
+from .helpers import has_aws_credentials
+from .helpers import read_config
+from .helpers import write_config
 
 log = logging.getLogger('autodns')
 
@@ -21,7 +22,7 @@ class Record:
         self.domains = config['DOMAINS']
         self.ttl = config['TTL']
         self.zoneid = config['ZONEID']
-        # Fix for #1 
+        # Fix for #1
         self.address = ''
         if 'ADDRESS' in config.keys():
             self.address = config['ADDRESS']
